@@ -27,20 +27,24 @@
 		</tr>
 		<?php
 
-			// glob
+			$threads = glob("threads/*");
 
-			echo str_replace("\n", "<br>", file_get_contents("thread", false));
+			foreach ($threads as $thread) {
 
-			echo "
-				<tr>
-					<td><strong><a href>Fat Foxgirls</a></strong><br>basically any foxgirls from anime that are big and chonky. I wanted to see senko so</td>
-					<td>BBW</td>
-					<td>31</td>
-					<td>17</td>
-					<td>Wed Oct 21, 2009 12:09 pm</td>
-				</tr>
-			";
+				$meta_and_posts = explode("<END_META>", file_get_contents($thread, false));
 
+				$meta = explode("\n", $meta_and_posts[0]);
+
+				echo "
+					<tr>
+						<td><strong><a href>$meta[0]</a></strong><br>$meta[1]</td>
+						<td>$meta[2]</td>
+						<td>$meta[3]</td>
+						<td>$meta[4]</td>
+						<td>$meta[5]</td>
+					</tr>
+				";
+			}
 		?>
 	</table>
 </body>
