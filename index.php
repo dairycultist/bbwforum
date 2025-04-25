@@ -15,7 +15,7 @@
 
 <body>
 
-<!-- php -S localhost:4444 -t . -->
+	<!-- php -S localhost:4444 -t . -->
 
 	<table>
 		<tr>
@@ -26,6 +26,10 @@
 			<th>Last Post</th>
 		</tr>
 		<?php
+
+			// glob
+
+			echo str_replace("\n", "<br>", file_get_contents("thread", false));
 
 			echo "
 				<tr>
