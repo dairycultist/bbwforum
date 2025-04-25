@@ -27,7 +27,8 @@
 		</tr>
 		<?php
 
-			$threads = glob("threads/*");
+			$threads = glob("threads/*", GLOB_NOSORT);
+			array_multisort(array_map('filemtime', $threads), SORT_NUMERIC, SORT_DESC, $threads);
 
 			foreach ($threads as $thread) {
 
