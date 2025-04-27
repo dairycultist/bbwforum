@@ -1,9 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+	<?php
+		$uri = explode("/", $_SERVER["REQUEST_URI"]);
+
+		// $id = substr($_SERVER["REQUEST_URI"], 15);
+
+		// $thread = "threads/$id";
+
+		// $meta_and_posts = explode("<META_DELIMITER>", file_get_contents($thread, false));
+
+		// $meta = explode("\n", $meta_and_posts[0]);
+		// $posts = explode("<POST_DELIMITER>", $meta_and_posts[1]);
+	?>
+
 	<meta charset="UTF-8">
 	<title>bbwforum</title>
-	<link rel="stylesheet" href="shared.css">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+		body { font-family: "Roboto", sans-serif; }
+		table { border-collapse: collapse; }
+		th, td { border: 1px solid black; padding: 0.5em 1em; text-align: center; }
+		th:first-of-type, td:first-of-type { text-align: left; }
+		th { background:rgb(115, 167, 222); }
+		td { color: #777; }
+		td a { color: black; font-weight: 700; text-decoration: none; }
+		td a:hover { text-decoration: underline; }
+	</style>
 </head>
 
 <body>
@@ -12,40 +37,18 @@
 	
 	<h1>bbwforum - an anonymous forum</h1>
 
-	<table>
-		<tr>
-			<th>Thread</th>
-			<th>Category</th>
-			<th>Posts</th>
-			<th>Images</th>
-			<th>Last Post</th>
-		</tr>
-		<?php
+	<?php
+	
+		if ($uri[1] == "thread") {
 
-			// grab all thread files in order by date
-			$threads = glob("threads/*", GLOB_NOSORT);
-			array_multisort(array_map('filemtime', $threads), SORT_NUMERIC, SORT_DESC, $threads);
+			include 'thread.php';
 
-			// display their metadata
-			foreach ($threads as $thread) {
+		} else {
 
-				$id = substr($thread, 8);
-				$meta_and_posts = explode("<META_DELIMITER>", file_get_contents($thread, false));
+			include 'all_threads.php';
+		}
 
-				$meta = explode("\n", $meta_and_posts[0]);
-
-				echo "
-					<tr>
-						<td><a href='thread.php?id=$id'>$meta[0]</a><br>$meta[1]</td>
-						<td><a href='?cat=$meta[2]'>$meta[2]</a></td>
-						<td>$meta[3]</td>
-						<td>$meta[4]</td>
-						<td>$meta[5]</td>
-					</tr>
-				";
-			}
-		?>
-	</table>
+	?>
 </body>
 
 </html>
