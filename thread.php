@@ -11,7 +11,7 @@
 
 			$post_parts = explode("<POST_PART>", $post);
 
-			echo "<tr><th>$post_parts[0] #$index</th></tr>";
+			echo "<tr><th>" . format_date($post_parts[0]) . " #$index</th></tr>";
 			echo "<tr><td>";
 
 			$post_images = explode("\n", $post_parts[1]);

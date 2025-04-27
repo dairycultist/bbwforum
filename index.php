@@ -3,6 +3,10 @@
 <head>
 
 	<?php
+		function format_date($unix) {
+			return date("Y-m-d h:i:sa", $unix);
+		}
+
 		$uri = explode("/", $_SERVER["REQUEST_URI"]);
 
 		if ($uri[1] == "thread") {
