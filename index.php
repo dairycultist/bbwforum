@@ -5,18 +5,24 @@
 	<?php
 		$uri = explode("/", $_SERVER["REQUEST_URI"]);
 
-		// $id = substr($_SERVER["REQUEST_URI"], 15);
+		if ($uri[1] == "thread") {
 
-		// $thread = "threads/$id";
+			$id = $uri[2];
 
-		// $meta_and_posts = explode("<META_DELIMITER>", file_get_contents($thread, false));
+			$thread = "threads/$id";
 
-		// $meta = explode("\n", $meta_and_posts[0]);
-		// $posts = explode("<POST_DELIMITER>", $meta_and_posts[1]);
+			$meta_and_posts = explode("<META_DELIMITER>", file_get_contents($thread, false));
+
+			$meta = explode("\n", $meta_and_posts[0]);
+			$posts = explode("<POST_DELIMITER>", $meta_and_posts[1]);
+		}
 	?>
 
 	<meta charset="UTF-8">
-	<title>bbwforum</title>
+	<title>
+		bbwforum
+		<?php if ($uri[1] == "thread") { echo "- $meta[0]"; } ?>
+	</title>
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
@@ -28,6 +34,8 @@
 		td { color: #777; }
 		td a { color: black; font-weight: 700; text-decoration: none; }
 		td a:hover { text-decoration: underline; }
+		td p { color: black; }
+		td blockquote { color: green; margin: 1em 0; }
 	</style>
 </head>
 
