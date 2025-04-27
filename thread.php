@@ -24,7 +24,7 @@
 
 				if (!empty(trim($post_image))) {
 					echo "
-					<a href='$post_image'>
+					<a href='$post_image' target='_blank'>
 						<span class='ellipsis'>$post_image</span>
 						<br>
 						<img src='$post_image'>
