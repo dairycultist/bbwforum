@@ -4,15 +4,26 @@
 	<script>
 
 		<?php
-			$result = file_put_contents(
-				"threads/" . $_POST["post_id"],
-				"\n<POST_DELIMITER>\n" . time() . "\n<POST_PART>\n<POST_PART>\n" . $_POST["post_body"],
-				FILE_APPEND | LOCK_EX
-			);
+			$post_body = $_POST["post_body"];
 
-			// just make an alert if something fails
-			if ($result === false) {
-				echo "alert('error');";
+			// https://stackoverflow.com/questions/709669/how-do-i-remove-blank-lines-from-text-in-php
+			$post_body = preg_replace("/(^[\r\n]*|[\r\n]+)[\s\t]*[\r\n]+/", "\n", $post_body);
+
+			if (!empty(trim($post_body))) {
+
+				$result = file_put_contents(
+					"threads/" . $_POST["post_id"],
+					"\n<POST_DELIMITER>\n" . time() . "\n<POST_PART>\n<POST_PART>\n" . $post_body,
+					FILE_APPEND | LOCK_EX
+				);
+
+				// just make an alert if something fails
+				if ($result === false) {
+					echo "alert('Something went wrong on our end.');";
+				}
+
+			} else {
+				echo "alert('Post cannot be empty.');";
 			}
 		?>
 
