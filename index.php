@@ -50,7 +50,9 @@
 	<header>
 		<h1>bbwforum - an anonymous forum</h1>
 		<nav>
-			[ <a href="/">Home</a> ]
+			[ <a href="/">All Categories</a> ]
+			[ <a href="/BBW">BBW</a> ]
+			[ <a href="/Hourglass">Hourglass</a> ]
 		</nav>
 	</header>
 
