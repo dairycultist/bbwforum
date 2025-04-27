@@ -1,11 +1,13 @@
 <style>
 	td { color: #777; }
-	td a { color: black; font-weight: 700; }
+	td a { color: #bbb; font-weight: 700; }
 </style>
+
+<h2>All <?php echo $uri[1]; ?> threads</h2>
 
 <table>
 	<tr>
-		<th>Thread</th>
+		<th style="width: 55%;">Thread</th>
 		<th>Category</th>
 		<th>Posts</th>
 		<th>Images</th>

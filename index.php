@@ -28,14 +28,14 @@
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-		body { font-family: "Roboto", sans-serif; }
+		body { font-family: "Roboto", sans-serif; background: black; color: #bbb; }
 		header { text-align: center; margin: 4em 0; }
 		table { border-collapse: collapse; width: 100%; }
-		th, td { border: 1px solid black; padding: 0.5em 1em; text-align: center; }
+		th, td { border: 1px solid #422; padding: 0.5em 1em; text-align: center; }
 		th:first-of-type, td:first-of-type { text-align: left; }
-		th { background:rgb(115, 167, 222); }
+		th { background: #422; }
 
-		a, a * { text-decoration: none; }
+		a, a * { text-decoration: none; color: #844; }
 		a:hover, a:hover * { text-decoration: underline; }
 	</style>
 </head>
@@ -47,7 +47,7 @@
 	<header>
 		<h1>bbwforum - an anonymous forum</h1>
 		<nav>
-			[<a href="/">Home</a>]
+			[ <a href="/">Home</a> ]
 		</nav>
 	</header>
 
