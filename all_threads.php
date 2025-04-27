@@ -25,6 +25,10 @@
 
 			$meta = explode("\n", $meta_and_posts[0]);
 
+			if (!empty($uri[1]) && strcmp($meta[2], $uri[1]) != 0) {
+				continue;
+			}
+
 			echo "
 				<tr>
 					<td><a href='/thread/$id'>$meta[0]</a><br>$meta[1]</td>

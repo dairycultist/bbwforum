@@ -5,6 +5,8 @@
 	td img { height: 200px; }
 </style>
 
+<h2><?php echo "$meta[0] ($meta[2])"; ?></h2>
+
 <table>
 	<?php
 		foreach ($posts as $index => $post) {
@@ -51,6 +53,7 @@
 	?>
 	<tr>
 		<th>
+			<!-- https://www.w3schools.com/php/php_file_upload.asp -->
 			<form action="/action_make_post.php" method="POST">
 				<input type="text" name="post_id" value="<?php echo $id; ?>" style="display: none;">
 
