@@ -1,3 +1,8 @@
+<!--
+	php -S localhost:4444 -t .
+	https://www.hostinger.com/
+-->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,8 +46,6 @@
 </head>
 
 <body>
-
-	<!-- php -S localhost:4444 -t . -->
 	
 	<header>
 		<h1>bbwforum - an anonymous forum</h1>

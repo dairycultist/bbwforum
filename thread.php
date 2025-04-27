@@ -13,7 +13,7 @@
 
 			$post_parts = explode("<POST_PART>", $post);
 
-			echo "<tr><th>" . format_date($post_parts[0]) . " #$index</th></tr>";
+			echo "<tr><th id='$index'>" . format_date($post_parts[0]) . " #$index</th></tr>";
 			echo "<tr><td>";
 
 			$post_images = explode("\n", $post_parts[1]);
@@ -44,7 +44,21 @@
 				} else if ($post_line[0] == ">") {
 					echo "<blockquote>$post_line</blockquote>";
 				} else {
-					echo "<p>$post_line</p>";
+
+					echo "<p>";
+
+					// must get anchor tags
+					$a_matches_count = preg_match_all("/#(?<id>[0-9]+)/", $post_line, $a_matches, PREG_PATTERN_ORDER);
+					$a_split = preg_split("/#[0-9]+/", $post_line);
+
+					for ($i = 0; $i < $a_matches_count; $i++) {
+						echo $a_split[$i];
+						echo "<a href='#" . $a_matches['id'][$i] . "'>#" . $a_matches['id'][$i] . "</a>";
+					}
+
+					echo $a_split[$a_matches_count];
+
+					echo "</p>";
 				}
 			}
 			
