@@ -29,8 +29,8 @@
 		@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 		body { font-family: "Roboto", sans-serif; }
-		h1 { text-align: center; }
-		table { border-collapse: collapse; }
+		h1, nav { text-align: center; }
+		table { border-collapse: collapse; margin: auto; width: 100%; max-width: 80em; }
 		th, td { border: 1px solid black; padding: 0.5em 1em; text-align: center; }
 		th:first-of-type, td:first-of-type { text-align: left; }
 		th { background:rgb(115, 167, 222); }
@@ -45,6 +45,10 @@
 	<!-- php -S localhost:4444 -t . -->
 	
 	<h1>bbwforum - an anonymous forum</h1>
+	<nav>
+		[<a href="/">Home</a>]
+	</nav>
+	<br>
 
 	<?php
 	
