@@ -3,17 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>bbwforum - an anonymous forum</title>
-	<style>
-		@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-		body { font-family: "Roboto", sans-serif; }
-		table { border-collapse: collapse; }
-		th, td { border: 1px solid black; padding: 0.5em 1em; text-align: center; }
-		th:first-of-type, td:first-of-type { text-align: left; }
-		th { background:rgb(115, 167, 222); }
-		td { color: #777; }
-		td a { color: black; font-weight: 700; text-decoration: none; }
-		td a:hover { text-decoration: underline; }
-	</style>
+	<link rel="stylesheet" href="shared.css">
 </head>
 
 <body>
@@ -37,13 +27,14 @@
 			// display their metadata
 			foreach ($threads as $thread) {
 
+				$id = substr($thread, 8);
 				$meta_and_posts = explode("<END_META>", file_get_contents($thread, false));
 
 				$meta = explode("\n", $meta_and_posts[0]);
 
 				echo "
 					<tr>
-						<td><a href>$meta[0]</a><br>$meta[1]</td>
+						<td><a href='thread.php?id=$id'>$meta[0]</a><br>$meta[1]</td>
 						<td><a href>$meta[2]</a></td>
 						<td>$meta[3]</td>
 						<td>$meta[4]</td>
