@@ -47,13 +47,19 @@
 
 					echo "<p>";
 
-					// must get anchor tags
+					// must get anchor tags to other posts
+					// only allow anchor tags when they're less than the current post ID
 					$a_matches_count = preg_match_all("/#(?<id>[0-9]+)/", $post_line, $a_matches, PREG_PATTERN_ORDER);
 					$a_split = preg_split("/#[0-9]+/", $post_line);
 
 					for ($i = 0; $i < $a_matches_count; $i++) {
 						echo $a_split[$i];
-						echo "<a href='#" . $a_matches['id'][$i] . "'>#" . $a_matches['id'][$i] . "</a>";
+
+						if ($a_matches['id'][$i] < $index) {
+							echo "<a href='#" . $a_matches['id'][$i] . "'>#" . $a_matches['id'][$i] . "</a>";
+						} else {
+							echo "#" . $a_matches['id'][$i];
+						}
 					}
 
 					echo $a_split[$a_matches_count];
