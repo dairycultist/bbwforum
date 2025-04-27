@@ -1,3 +1,8 @@
+<style>
+	td { color: #777; }
+	td a { color: black; font-weight: 700; }
+</style>
+
 <table>
 	<tr>
 		<th>Thread</th>
