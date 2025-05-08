@@ -33,7 +33,8 @@
 					<a href='$post_image' target='_blank'>
 						<span class='ellipsis'>$post_image</span>
 						<br>
-						<img src='$post_image'>
+						<img src='$post_image' class='smallimage'>
+						<img src='$post_image' class='bigimage'>
 					</a>
 					";
 				}
