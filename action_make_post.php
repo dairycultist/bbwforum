@@ -12,7 +12,7 @@
 			if (!empty(trim($post_body))) {
 
 				$result = file_put_contents(
-					"threads/" . $_POST["post_id"],
+					"thread-posts/" . $_POST["post_id"],
 					"\n<POST_DELIMITER>\n" . time() . "\n<POST_PART>\n<POST_PART>\n" . $post_body,
 					FILE_APPEND | LOCK_EX
 				);

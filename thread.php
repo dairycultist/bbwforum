@@ -6,6 +6,12 @@
 </style>
 
 <h2><?php echo "$meta[0] ($meta[2])"; ?></h2>
+<p>
+	Posts:
+	<strong><?php echo "$meta[3]"; ?></strong>
+	| Images:
+	<strong><?php echo "$meta[4]"; ?></strong>
+</p>
 
 <table>
 	<?php

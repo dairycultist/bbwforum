@@ -26,10 +26,8 @@
 
 			$id = $uri[2];
 
-			$meta_and_posts = explode("<META_DELIMITER>", file_get_contents("thread-posts/$id", false));
-
-			$meta = explode("\n", $meta_and_posts[0]);
-			$posts = explode("<POST_DELIMITER>", $meta_and_posts[1]);
+			$meta = explode("\n", file_get_contents("thread-meta/$id", false));
+			$posts = explode("<POST_DELIMITER>", file_get_contents("thread-posts/$id", false));
 		}
 	?>
 
@@ -41,7 +39,7 @@
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-		body { font-family: "Roboto", sans-serif; background: black; color: #bbb; }
+		body { font-family: "Roboto", sans-serif; background: black; color: #bbb; margin: 0 1em; }
 		header, footer { text-align: center; margin: 8em 0; }
 		table { border-collapse: collapse; width: 100%; }
 		th, td { border: 1px solid #422; padding: 0.5em 1em; text-align: center; }
