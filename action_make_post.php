@@ -4,7 +4,7 @@
 	<script>
 
 		<?php
-			$post_body = $_POST["post_body"];
+			$post_body = strip_tags($_POST["post_body"]);
 
 			// https://stackoverflow.com/questions/709669/how-do-i-remove-blank-lines-from-text-in-php
 			$post_body = preg_replace("/(^[\r\n]*|[\r\n]+)[\s\t]*[\r\n]+/", "\n", $post_body);

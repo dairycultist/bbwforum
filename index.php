@@ -1,6 +1,14 @@
 <!--
 	php -S localhost:4444 -t .
 	https://www.hostinger.com/
+
+	- split "threads/" into "thread-posts/" and "thread-meta/" (since former just needs appending, but latter needs to be completely overwritten sometimes)
+	- image uploading
+	- update meta when a new post is made under a thread
+
+	and probably a lot of safeguards for if the user tries to like, post to a thread that doesn't exist or something
+	and a captcha to prevent botting
+	and probably some moderation tools
 -->
 
 <!DOCTYPE html>
@@ -18,7 +26,7 @@
 
 			$id = $uri[2];
 
-			$meta_and_posts = explode("<META_DELIMITER>", file_get_contents("threads/$id", false));
+			$meta_and_posts = explode("<META_DELIMITER>", file_get_contents("thread-posts/$id", false));
 
 			$meta = explode("\n", $meta_and_posts[0]);
 			$posts = explode("<POST_DELIMITER>", $meta_and_posts[1]);

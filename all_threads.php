@@ -16,13 +16,13 @@
 	<?php
 
 		// grab all thread files in order by date
-		$threads = glob("threads/*", GLOB_NOSORT);
+		$threads = glob("thread-posts/*", GLOB_NOSORT);
 		array_multisort(array_map('filemtime', $threads), SORT_NUMERIC, SORT_DESC, $threads);
 
 		// display their metadata
 		foreach ($threads as $thread) {
 
-			$id = substr($thread, 8);
+			$id = substr($thread, 13);
 			$meta_and_posts = explode("<META_DELIMITER>", file_get_contents($thread, false));
 
 			$meta = explode("\n", $meta_and_posts[0]);
