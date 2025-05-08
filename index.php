@@ -82,7 +82,7 @@
 		</aside>
 	</div>
 
-	<footer>(c) 2025 dairycultist. All rights reserved.</footer>
+	<footer id="footer">(c) 2025 dairycultist. All rights reserved.</footer>
 
 </body>
 

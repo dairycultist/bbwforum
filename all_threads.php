@@ -36,7 +36,7 @@
 					<td><a href='/$meta[2]'>$meta[2]</a></td>
 					<td>$meta[3]</td>
 					<td>$meta[4]</td>
-					<td>" . format_date($meta[5]) . "</td>
+					<td>" . format_date($meta[5]) . " UTC</td>
 				</tr>
 			";
 		}

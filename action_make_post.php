@@ -27,7 +27,7 @@
 			}
 		?>
 
-		window.location.replace("/thread/<?php echo $_POST["post_id"]; ?>");
+		window.location.replace("/thread/<?php echo $_POST["post_id"]; ?>#footer");
 
 	</script>
 </head>
