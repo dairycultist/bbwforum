@@ -2,7 +2,9 @@
 	php -S localhost:4444 -t .
 	https://www.hostinger.com/
 
-	- split "threads/" into "thread-posts/" and "thread-meta/" (since former just needs appending, but latter needs to be completely overwritten sometimes)
+	thread-posts/ (just needs appending to update)
+	thread-meta/ (needs to be completely overwritten to update)
+
 	- image uploading
 	- update meta when a new post is made under a thread
 
@@ -45,6 +47,8 @@
 		th, td { border: 1px solid #422; padding: 0.5em 1em; text-align: center; }
 		th:first-of-type, td:first-of-type { text-align: left; }
 		th { background: #422; }
+
+		textarea { background: black; font: inherit; color: inherit; padding: 0.5em; font-weight: 400; border: none; }
 
 		a, a * { text-decoration: none; color: #844; }
 		a:hover, a:hover * { text-decoration: underline; }
