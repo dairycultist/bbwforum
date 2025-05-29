@@ -11,6 +11,8 @@
 	and probably a lot of safeguards for if the user tries to like, post to a thread that doesn't exist or something
 	and a captcha to prevent botting
 	and probably some moderation tools
+
+	ref https://i.redd.it/8zr7f8lm5b3f1.png
 -->
 
 <!DOCTYPE html>
@@ -64,9 +66,9 @@
 	<header>
 		<h1>bbwforum - an anonymous forum</h1>
 		<nav>
-			[ <a href="/">All Categories</a> ]
-			[ <a href="/BBW">BBW</a> ]
-			[ <a href="/Hourglass">Hourglass</a> ]
+			( <a href="/">All Categories</a> )
+			( <a href="/BBW">BBW</a> )
+			( <a href="/Hourglass">Hourglass</a> )
 		</nav>
 	</header>
 
