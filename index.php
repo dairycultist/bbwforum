@@ -54,14 +54,10 @@
 		th:first-of-type, td:first-of-type { text-align: left; }
 		th { background: #fdc; }
 
-		textarea { background: black; font: inherit; color: inherit; padding: 0.5em; font-weight: 400; border: none; }
+		textarea { font: inherit; color: inherit; padding: 0.5em; font-weight: 400; border: none; }
 
 		a, a * { text-decoration: none; color: #844; }
 		a:hover, a:hover * { text-decoration: underline; }
-
-		.bigimage { display: none; }
-		.smallimage { filter: brightness(50%); }
-		a:hover .bigimage { display: block; z-index: 999; position: fixed; height: 90%; top: 50%; right: 2em; transform: translateY(-50%); pointer-events: none; }
 	</style>
 </head>
 

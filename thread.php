@@ -1,8 +1,11 @@
 <style>
 	.gallery { display: flex; gap: 1em; }
-	.ellipsis { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 14em; display: inline-block; }
+	.ellipsis { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 140px; display: inline-block; }
 	td blockquote { color: green; margin: 1em 0; }
-	td img { height: 200px; }
+
+	.smallimage { max-width: 140px; max-height: 140px; }
+	.bigimage { display: none; }
+	a:hover .bigimage { display: block; z-index: 999; position: fixed; height: 90%; top: 50%; right: 2em; transform: translateY(-50%); pointer-events: none; }
 </style>
 
 <h2><?php echo "$meta[0] ($meta[1])"; ?></h2>
