@@ -8,10 +8,8 @@
 <table>
 	<tr>
 		<th style="width: 55%;">Thread</th>
-		<th>Category</th>
 		<th>Posts</th>
 		<th>Images</th>
-		<th>Last Post</th>
 	</tr>
 	<?php
 
@@ -26,16 +24,22 @@
 
 			$meta = explode("\n", file_get_contents($thread, false));
 
-			if (!empty($uri[1]) && strcmp($meta[2], $uri[1]) != 0) {
+			if (!empty($uri[1]) && strcmp($meta[1], $uri[1]) != 0) {
 				continue;
 			}
 
 			echo "
 				<tr>
-					<td><a href='/$meta[1]' style='font-size: smaller;'>$meta[1]</a> ·<br><a href='/thread/$id'>$meta[0]</a></td>
+					<td>
+						<div style='font-size: smaller; margin-bottom: 0.5em;'>
+							<a href='/$meta[1]'>$meta[1]</a>
+							·
+							<span style='color: grey;'>Updated " . format_date($meta[4]) . " UTC</span>
+						</div>
+						<a href='/thread/$id'>$meta[0]</a>
+					</td>
 					<td>$meta[2]</td>
 					<td>$meta[3]</td>
-					<td>" . format_date($meta[4]) . " UTC</td>
 				</tr>
 			";
 		}

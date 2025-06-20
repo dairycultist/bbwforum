@@ -5,12 +5,12 @@
 	td img { height: 200px; }
 </style>
 
-<h2><?php echo "$meta[0] ($meta[2])"; ?></h2>
+<h2><?php echo "$meta[0] ($meta[1])"; ?></h2>
 <p>
 	Posts:
-	<strong><?php echo "$meta[3]"; ?></strong>
+	<strong><?php echo "$meta[2]"; ?></strong>
 	| Images:
-	<strong><?php echo "$meta[4]"; ?></strong>
+	<strong><?php echo "$meta[3]"; ?></strong>
 </p>
 
 <table>
