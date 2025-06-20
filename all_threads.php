@@ -1,6 +1,6 @@
 <style>
-	td { color: #777; }
-	td a { color: #bbb; font-weight: 700; }
+	td a { font-weight: 700; }
+	tr:nth-child(odd) { background: #fdc; }
 </style>
 
 <h2>All <?php echo $uri[1]; ?> threads</h2>
@@ -32,11 +32,10 @@
 
 			echo "
 				<tr>
-					<td><a href='/thread/$id'>$meta[0]</a><br>$meta[1]</td>
-					<td><a href='/$meta[2]'>$meta[2]</a></td>
+					<td><a href='/$meta[1]' style='font-size: smaller;'>$meta[1]</a> ·<br><a href='/thread/$id'>$meta[0]</a></td>
+					<td>$meta[2]</td>
 					<td>$meta[3]</td>
-					<td>$meta[4]</td>
-					<td>" . format_date($meta[5]) . " UTC</td>
+					<td>" . format_date($meta[4]) . " UTC</td>
 				</tr>
 			";
 		}

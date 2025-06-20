@@ -43,12 +43,12 @@
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-		body { font-family: "Roboto", sans-serif; background: black; color: #bbb; margin: 0 1em; }
+		body { font-family: "Roboto", sans-serif; background: white; color: #222; margin: 0 1em; }
 		header, footer { text-align: center; margin: 8em 0; }
 		table { border-collapse: collapse; width: 100%; }
-		th, td { border: 1px solid #422; padding: 0.5em 1em; text-align: center; }
+		th, td { padding: 0.5em 1em; text-align: center; }
 		th:first-of-type, td:first-of-type { text-align: left; }
-		th { background: #422; }
+		th { background: #fdc; }
 
 		textarea { background: black; font: inherit; color: inherit; padding: 0.5em; font-weight: 400; border: none; }
 
