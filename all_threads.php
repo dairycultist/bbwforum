@@ -1,15 +1,32 @@
 <style>
 	td a { font-weight: 700; }
-	tr:nth-child(odd) { background: #fdc; }
-</style>
+	tr:nth-child(even) { background: #fdc; }
 
-<h2>All <?php echo $uri[1]; ?> threads</h2>
+	nav { display: flex; }
+	nav a { padding: 1em; }
+	nav a.selected { border-bottom: 4px solid #844; padding-bottom: calc(1em - 4px); cursor: default; }
+</style>
 
 <table>
 	<tr>
-		<th style="width: 55%;">Thread</th>
-		<th>Posts</th>
-		<th>Images</th>
+		<td colspan="3" style="padding: 0;">
+			<nav>
+				<a <?php if (strcmp($uri[1], "") == 0) { echo "class='selected'"; } else { echo "href='/'"; } ?>>
+					All Categories
+				</a>
+				<a <?php if (strcmp($uri[1], "BBW") == 0) { echo "class='selected'"; } else { echo "href='/BBW'"; } ?>>
+					BBW
+				</a>
+				<a <?php if (strcmp($uri[1], "Hourglass") == 0) { echo "class='selected'"; } else { echo "href='/Hourglass'"; } ?>>
+					Hourglass
+				</a>
+			</nav>
+		</td>
+	</tr>
+	<tr style="background: transparent;">
+		<td style="width: 55%;">Thread</td>
+		<td>Posts</td>
+		<td>Images</td>
 	</tr>
 	<?php
 

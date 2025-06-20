@@ -13,6 +13,7 @@
 	and probably some moderation tools
 
 	ref https://i.redd.it/8zr7f8lm5b3f1.png
+	ref2 https://www.mumsnet.com/talk/active
 -->
 
 <!DOCTYPE html>
@@ -43,50 +44,47 @@
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-		body { font-family: "Roboto", sans-serif; background: white; color: #222; margin: 0; }
+		body { font-family: "Roboto", sans-serif; background: #f4eeee; color: #222; margin: auto; max-width: 50em; }
 
 		header { background: #844; color: white; align-items: center; padding: 4px; position: sticky; top: 0; display: flex; gap: 2em; }
 		header a { color: inherit; }
-		h1 { margin: 0; font-size: 1.5em; }
+		h1 { font-weight: 400; }
 
-		table { border-collapse: collapse; width: 100%; }
+		footer { background: #844; padding: 1em; color: white; font-size: smaller; margin-top: 8em; }
+
+		table { border-spacing: 0; width: 100%; border: 1px solid #ddd0d0; border-radius: 4px; overflow: hidden; }
 		th, td { padding: 0.7em 1em; text-align: center; }
+		tr { background: white; }
 		th:first-of-type, td:first-of-type { text-align: left; }
-		th { background: #fdc; }
+		th { background: #fdc; font-weight: 400; }
 
 		textarea { font: inherit; color: inherit; padding: 0.5em; font-weight: 400; border: none; }
 
 		a, a * { text-decoration: none; color: #844; }
-		a:hover, a:hover * { text-decoration: underline; }
+		a[href]:hover, a[href]:hover * { text-decoration: underline; }
 	</style>
 </head>
 
 <body>
-	
-	<header>
-		<h1>bbwforum - an anonymous forum</h1>
-		<a href="/">All Categories</a>
-		<a href="/BBW">BBW</a>
-		<a href="/Hourglass">Hourglass</a>
-		(c) 2025 dairycultist. All rights reserved.
-	</header>
 
-	<div style="display: flex; justify-content: center; gap: 1em;">
-		<main style="max-width: 50em; flex: 1;">
-			<?php
-			
-				if ($uri[1] == "thread") {
+	<h1>bbwforum - an anonymous forum</h1>
 
-					include 'thread.php';
+	<main>
+		<?php
+		
+			if ($uri[1] == "thread") {
 
-				} else {
+				include 'thread.php';
 
-					include 'all_threads.php';
-				}
+			} else {
 
-			?>
-		</main>
-	</div>
+				include 'all_threads.php';
+			}
+
+		?>
+	</main>
+
+	<footer>(c) 2025 dairycultist. All rights reserved.</footer>
 
 </body>
 
