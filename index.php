@@ -27,7 +27,15 @@
 
 				if (strcmp(date("m/d", time()), date("m/d", $unix)) == 0) {
 
-					return time() - $unix . " seconds ago";
+					$secs = time() - $unix;
+
+					if ($secs < 60) {
+						return  $secs . " seconds ago";
+					} else if ($secs < 3600) {
+						return  floor($secs / 60) . " minutes ago";
+					} else {
+						return  floor($secs / 3600) . " hours ago";
+					}
 				}
 
 				return date("m/d h:i:sa", $unix) . " UTC";
