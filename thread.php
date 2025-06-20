@@ -3,6 +3,8 @@
 	.ellipsis { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 140px; display: inline-block; }
 	td blockquote { color: green; margin: 1em 0; }
 
+	tr + tr td { border-top: 1px solid #ddd0d0; }
+
 	.smallimage { max-width: 140px; max-height: 140px; }
 	.bigimage { display: none; }
 	a:hover .bigimage { display: block; z-index: 999; position: fixed; height: 90%; top: 50%; right: 2em; transform: translateY(-50%); pointer-events: none; }
@@ -22,8 +24,9 @@
 
 			$post_parts = explode("<POST_PART>", $post);
 
-			echo "<tr><th id='$index'>#$index <div style='float: right;'>( <a href='/action_report.php/?thread=$id&post=$index'>Report</a> ) " . format_date($post_parts[0]) . "</div></th></tr>";
-			echo "<tr><td>";
+			echo "<tr id='$index'><td>";
+
+			echo "<div style='font-size: smaller; color: grey;'>#$index <div style='float: right;'>( <a href='/action_report.php/?thread=$id&post=$index'>Report</a> ) " . format_date($post_parts[0]) . "</div></div>";
 
 			$post_images = explode("\n", $post_parts[1]);
 
