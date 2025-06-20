@@ -81,17 +81,14 @@
 			echo "</td></tr>";
 		}
 	?>
-	<tr>
-		<th>
-			<!-- https://www.w3schools.com/php/php_file_upload.asp -->
-			<form action="/action_make_post.php" method="POST">
-				<input type="text" name="post_id" value="<?php echo $id; ?>" style="display: none;">
-
-				<label for="post_body">Make post:</label><br>
-				<textarea id="post_body" name="post_body" rows="6" cols="80"></textarea>
-				<br>
-				<input type="submit" value="Post">
-			</form>
-		</th>
-	</tr>
 </table>
+
+<!-- https://www.w3schools.com/php/php_file_upload.asp -->
+<form action="/action_make_post.php" method="POST">
+	<input type="text" name="post_id" value="<?php echo $id; ?>" style="display: none;">
+
+	<label for="post_body">Make post:</label><br>
+	<textarea id="post_body" name="post_body" rows="6" cols="80"></textarea>
+	<br>
+	<input type="submit" value="Post">
+</form>

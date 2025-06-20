@@ -63,13 +63,14 @@
 
 		footer { background: #844; padding: 1em; color: white; font-size: smaller; margin-top: 8em; }
 
-		table { border-spacing: 0; width: 100%; border: 1px solid #ddd0d0; border-radius: 4px; overflow: hidden; }
+		table, form { border-spacing: 0; width: 100%; border: 1px solid #ddd0d0; border-radius: 4px; overflow: hidden; }
+		form { margin-top: 1em; background: white; padding: 1em; box-sizing: border-box; }
 		th, td { padding: 0.7em 1em; text-align: center; }
 		tr { background: white; }
 		th:first-of-type, td:first-of-type { text-align: left; }
 		th { background: #fdc; font-weight: 400; }
 
-		textarea { font: inherit; color: inherit; padding: 0.5em; font-weight: 400; border: none; }
+		textarea { font: inherit; color: inherit; padding: 0.5em; font-weight: 400; }
 
 		a, a * { text-decoration: none; color: #844; }
 		a[href]:hover, a[href]:hover * { text-decoration: underline; }
