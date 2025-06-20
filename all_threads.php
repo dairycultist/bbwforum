@@ -51,7 +51,7 @@
 						<div style='font-size: smaller; margin-bottom: 0.5em;'>
 							<a href='/$meta[1]'>$meta[1]</a>
 							·
-							<span style='color: grey;'>Updated " . format_date($meta[4]) . " UTC</span>
+							<span style='color: #844;'>Updated " . format_date($meta[4]) . "</span>
 						</div>
 						<a href='/thread/$id'>$meta[0]</a>
 					</td>

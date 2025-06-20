@@ -22,7 +22,7 @@
 
 			$post_parts = explode("<POST_PART>", $post);
 
-			echo "<tr><th id='$index'>#$index <div style='float: right;'>( <a href='/action_report.php/?thread=$id&post=$index'>Report</a> ) " . format_date($post_parts[0]) . " UTC</div></th></tr>";
+			echo "<tr><th id='$index'>#$index <div style='float: right;'>( <a href='/action_report.php/?thread=$id&post=$index'>Report</a> ) " . format_date($post_parts[0]) . "</div></th></tr>";
 			echo "<tr><td>";
 
 			$post_images = explode("\n", $post_parts[1]);

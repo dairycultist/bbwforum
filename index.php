@@ -22,7 +22,18 @@
 
 	<?php
 		function format_date($unix) {
-			return date("Y-m-d h:i:sa", $unix);
+
+			if (strcmp(date("Y", time()), date("Y", $unix)) == 0) {
+
+				if (strcmp(date("m/d", time()), date("m/d", $unix)) == 0) {
+
+					return time() - $unix . " seconds ago";
+				}
+
+				return date("m/d h:i:sa", $unix) . " UTC";
+			}
+
+			return date("Y/m/d h:i:sa", $unix) . " UTC";
 		}
 
 		$uri = explode("/", $_SERVER["REQUEST_URI"]);
